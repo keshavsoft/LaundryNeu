@@ -1,10 +1,7 @@
 import { BookingSaveFunc } from "./SaveFuncs.js";
 
-let AddListenersFunc = () => {
-    let jVarLocalBookingSaveButtonId = document.getElementById("BookingSaveButtonId");
+let LocalAddKeyPressToVertial = () => {
     let jVarLocalFormVertical = document.getElementById("FormVertical");
-    let jVarLocalFormForGarments = document.getElementById("FormForGarments");
-
     let jVarLocalFormElements = jVarLocalFormVertical.querySelectorAll("input");
 
     for (let i = 0; i < jVarLocalFormElements.length; i++) {
@@ -15,7 +12,10 @@ let AddListenersFunc = () => {
             }
         });
     };
+};
 
+let LocalAddKeyPressToGarments = () => {
+    let jVarLocalFormForGarments = document.getElementById("FormForGarments");
     let jVarLocalGarmentElements = jVarLocalFormForGarments.querySelectorAll("input");
 
     for (let i = 0; i < jVarLocalGarmentElements.length; i++) {
@@ -26,6 +26,26 @@ let AddListenersFunc = () => {
             }
         });
     };
+};
+
+
+let LocalAmountCalculate = () => {
+    let jVarLocalWeight = document.getElementById("Weight");
+    let jVarLocalKgRate = document.getElementById("KgRate");
+    let jVarLocalAmount = document.getElementById("Amount");
+
+    jVarLocalAmount.addEventListener("keypress", async (event) => {
+        if (event.keyCode === 13) { // key code of the keybord key
+            jVarLocalAmount.value = jVarLocalWeight.value * jVarLocalKgRate.value;
+        }
+    });
+};
+
+let AddListenersFunc = () => {
+    let jVarLocalBookingSaveButtonId = document.getElementById("BookingSaveButtonId");
+    LocalAmountCalculate();
+    // LocalAddKeyPressToVertial();
+    // LocalAddKeyPressToGarments();
 
     jVarLocalBookingSaveButtonId.addEventListener("click", BookingSaveFunc);
 };
