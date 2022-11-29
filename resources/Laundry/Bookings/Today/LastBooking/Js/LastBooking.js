@@ -13,13 +13,12 @@ let LastBookingFunc = async (inEvent) => {
 
     var template = Handlebars.compile(jVarLocalFromHbs);
     let jVarLocalDataToShow = await LastPkData();
-
-    if (jVarLocalDataToShow.KTF) {
-
-        jVarLocalKCont1.innerHTML = template(jVarLocalDataToShow.KResult);
-
-    };
     
+    if (jVarLocalDataToShow.KTF) {
+        jVarLocalKCont1.innerHTML = template(jVarLocalDataToShow.KResult);
+    } else {
+        console.log("jVarLocalDataToShow : ", jVarLocalDataToShow);
+    };
 };
 
 LastBookingFunc().then();

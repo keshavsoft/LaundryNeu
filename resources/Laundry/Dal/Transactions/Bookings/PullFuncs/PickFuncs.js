@@ -87,14 +87,14 @@ let LastPkData = async () => {
     let LocalFromFromPk;
 
     let LocalFromFuncsForPkStartFunc = await FuncsForPkStartFunc();
-
+console.log("LocalFromFuncsForPkStartFunc : ",LocalFromFuncsForPkStartFunc);
     if (LocalFromFuncsForPkStartFunc.KTF === false) {
         LocalReturnObject.KReason = LocalFromFuncsForPkStartFunc.KReason;
         return await LocalReturnObject;
     };
 
     LocalFromFromPk = await FromPk({ inRowPK: LocalFromFuncsForPkStartFunc.LastPk });
-
+    console.log("LocalFromFromPk : ",LocalFromFromPk);
     if (LocalFromFromPk.KTF === false) {
         LocalReturnObject.KReason = LocalFromFromPk.KReason;
         return await LocalReturnObject;
