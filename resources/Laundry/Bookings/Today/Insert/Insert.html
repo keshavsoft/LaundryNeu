@@ -258,7 +258,20 @@
                                         <label class="col-md-6 col-form-label fs-2">Weight</label>
                                         <div class="col">
                                             <input type="number" class="form-control fs-2" name="Weight" id="Weight"
-                                                aria-describedby="emailHelp">
+                                                aria-describedby="emailHelp" required>
+                                            <div class="invalid-feedback">
+                                                Should not be empty!
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="col-md-6 col-form-label fs-2">Kg Rate</label>
+                                        <div class="col">
+                                            <input type="number" class="form-control fs-2" name="KgRate" id="KgRate"
+                                                aria-describedby="emailHelp" required>
                                             <div class="invalid-feedback">
                                                 Should not be empty!
                                             </div>
@@ -272,7 +285,7 @@
                                         <label class="col-form-label fs-2">Amount</label>
                                         <div class="col-12">
                                             <input type="number" class="form-control fs-2" name="Amount" id="Amount"
-                                                aria-describedby="emailHelp" min="0">
+                                                aria-describedby="emailHelp" min="0" required>
                                             <div class="invalid-feedback">
                                                 Should not be empty!
                                             </div>
