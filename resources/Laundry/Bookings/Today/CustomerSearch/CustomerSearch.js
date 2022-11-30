@@ -1,7 +1,7 @@
 import { ShowFunc as CustomersShowFunc } from "../../../Dal/Masters/Customers/Show.js";
+import { AddlistenersFunc } from "./Js/ListenerFuncs.js";
 
 let jVarLocalFromCustomersShowFunc = await CustomersShowFunc();
-
 
 let LocalFillDataList = ({ inData }) => {
     let jVarLocalCustomerDataListId = document.getElementById("CustomerDataListId");
@@ -17,8 +17,6 @@ let LocalFillDataList = ({ inData }) => {
     }
 };
 
-
-
 if (jVarLocalFromCustomersShowFunc.KTF) {
     let jVarLocalCustomersArray = Object.values(jVarLocalFromCustomersShowFunc.JsonData).map(
         LoopItem => {
@@ -26,4 +24,6 @@ if (jVarLocalFromCustomersShowFunc.KTF) {
         }
     );
     LocalFillDataList({ inData: jVarLocalCustomersArray });
+
+    AddlistenersFunc();
 };

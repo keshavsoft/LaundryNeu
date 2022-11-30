@@ -3,7 +3,7 @@ import { InsertFunc as DalSaveFunc } from "../../../Dal/Transactions/Completed/P
 let AddListeners = () => {
     let jVarLocalGoButtonid = document.getElementById("GoButtonid");
     let jVarLocalScanId = document.getElementById("ScanId");
-
+    console.log('ssssssssssss', jVarLocalGoButtonid);
     jVarLocalScanId.addEventListener("keypress", (event) => {
         if (event.key === 'Enter') { // key code of the keybord key
             event.preventDefault();

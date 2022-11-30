@@ -1,36 +1,20 @@
-import { InsertHtmlFunc } from "./HtmlFuns/FromTemplates";
-import { ChangeClassFunc } from "../../../../CommonFuncs/Header";
-import { BookingSaveFunc } from "../Js/SaveFuncs";
-import { BookingClear } from "../Js/ClearFunc";
+import { ReturnMobileNumberAndNameFromURLSearchParams } from "./urlSearchParams.js";
 
-let ToKCont1 = async (inEvent) => {
-    if ((inEvent === undefined) === false) {
-        let jVarLocalCurrentTarget = inEvent.currentTarget;
-        ChangeClassFunc({ inHtmlControl: jVarLocalCurrentTarget });
+let FromSearchParams = () => {
+    let FromSearchParams = ReturnMobileNumberAndNameFromURLSearchParams();
+
+    if (FromSearchParams === false) {
+
+    } else {
+        let jVarLocalMobile = document.getElementById("Mobile");
+        let jVarLocalCustomerName = document.getElementById("CustomerName");
+
+        jVarLocalMobile.value = parseInt(FromSearchParams.MobileNumber);
+        jVarLocalCustomerName.value = FromSearchParams.CustomerName;
+
+        let jVarLocalGarments1 = document.getElementById("Garments1");
+        jVarLocalGarments1.focus();
     };
-
-    let jVarLocalFromHbs = await InsertHtmlFunc();
-
-    let jVarLocalKCont1 = document.getElementById("KCont1");
-    jVarLocalKCont1.innerHTML = jVarLocalFromHbs;
-
-    LocalFuncAddListeners();
-    LocalSetFocusFunc();
 };
 
-let LocalSetFocusFunc = () => {
-    let jVarLocalCustomerName = document.getElementById("CustomerName");
-    jVarLocalCustomerName.focus();
-};
-
-let LocalFuncAddListeners = () => {
-    let jVarLocalBookingSaveButtonId = document.getElementById("BookingSaveButtonId");
-
-    jVarLocalBookingSaveButtonId.addEventListener("click", async (event) => {
-        await BookingSaveFunc();
-    });
-    // jVarLocalBookingSaveButtonId.addEventListener("click", BookingClear );
-
-};
-
-export { ToKCont1 };
+export { FromSearchParams };

@@ -1,5 +1,6 @@
 import { AddListenersFunc } from "./Js/AddListeners.js";
 import { ShowFunc as CustomersShowFunc } from "../../../Dal/Masters/Customers/Show.js";
+import { FromSearchParams } from "./Js/ShowinDOM.js";
 
 AddListenersFunc();
 
@@ -13,3 +14,5 @@ if (jVarLocalFromCustomersShowFunc.KTF) {
     );
 };
 
+//Mobile
+FromSearchParams();
