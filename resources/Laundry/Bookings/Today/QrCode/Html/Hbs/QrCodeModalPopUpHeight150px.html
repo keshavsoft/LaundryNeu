@@ -4,7 +4,7 @@
         <div style="width: 50%; float: left; height: 70px;">
             <div class="row">
                 <div style="text-align: center;" class="col">
-                    3
+                    {{QrCode}}
                 </div>
 
             </div>
@@ -14,13 +14,13 @@
             <div class="row">
                 <b>
                     <div style="text-align: center;" class="col">
-                        {{../Mobile}}
+                        {{Mobile}}
                     </div>
                 </b>
             </div>
             <div class="row">
                 <div style="text-align: center;" class="col">
-                    {{Pcs}} : {{Name}}
+                    {{GarmentsName}} : {{GarmentsPcs}}/{{GarmentPcsTotal}}
                 </div>
 
             </div>
@@ -30,7 +30,8 @@
 
             <div class="row">
                 <div style="text-align: center;" class="col">
-                    <canvas id="{{CanvasId}}" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
+                    <canvas id="{{CanvasId}}" width=1 height=1
+                        style="border:1px solid #fff;visibility:hidden"></canvas>
                 </div>
 
             </div>
@@ -44,7 +45,7 @@
     </div>
     <b>
         <div style="font-size: xx-large; text-align: center;" class="col">
-            {{../PK}}-{{RowNumber}}
+            {{BookingRef}}
         </div>
     </b>
 </div>
