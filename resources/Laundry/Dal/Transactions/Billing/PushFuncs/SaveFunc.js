@@ -1,9 +1,55 @@
 import { StartFunc as QrCodesCheckQrCode } from "../../QrCodes/PullFuncs/CheckQrCode.js";
 import { StartFunc as DalQrCodesAndCompleted } from "../../Bookings/PullFuncs/QrCodesAndCompleted.js";
+import { StartFunc as PushFuncsStartFunc } from "../../../../Dal/Transactions/Billing/PushFuncs/Original.js";
 
 let CommonFileName = "Billing.json";
 
 let InsertFunc = async ({ inQrCode }) => {
+    let LocalReturnObject = { KTF: false, KResult: "" };
+
+    try {
+        let LocalFromCheck = await CheckBeforeSave({ inQrCode });
+
+        console.log("LocalFromCheck : ", LocalFromCheck);
+
+        if (LocalFromCheck.KTF === false) {
+            LocalReturnObject.KReason = LocalFromCheck.KReason;
+            return await LocalReturnObject;
+        };
+
+        let LocalFromPushFuncsStartFunc = await PushFuncsStartFunc({
+            inDataToSave: {
+                DateTime: LocalGetDate()
+            },
+            inQrCode
+        });
+
+        console.log("LocalFromPushFuncsStartFunc------------ : ", LocalFromPushFuncsStartFunc);
+
+        if (LocalFromPushFuncsStartFunc.KTF === false) {
+            LocalReturnObject.KReason = LocalFromPushFuncsStartFunc.KReason;
+            return await LocalReturnObject;
+        };
+
+        // if (LocalFromWriteFile.success) {
+        //     LocalReturnObject.KResult = `${inQrCode} saved successfully...`;
+        //     LocalReturnObject.KTF = true;
+        // };
+
+        // if (LocalFromWriteFile.success) {
+        LocalReturnObject.KResult = `${inQrCode} saved successfully...`;
+        LocalReturnObject.KTF = true;
+        // };
+
+        return await LocalReturnObject;
+    } catch (error) {
+        console.log("error InsertFunc : ", error);
+    };
+
+    return await LocalReturnObject;
+};
+
+let InsertFunc_Keshav_1Dec2022 = async ({ inQrCode }) => {
     let LocalReturnObject = { KTF: false, KResult: "" };
 
     try {
@@ -36,7 +82,7 @@ let InsertFunc = async ({ inQrCode }) => {
     return await LocalReturnObject;
 };
 
-let LocalCheckBeforeSave = async ({ inQrCode }) => {
+let CheckBeforeSave = async ({ inQrCode }) => {
     let LocalReturnObject = { KTF: false, KResult: "" };
 
     try {
@@ -67,8 +113,6 @@ let LocalCheckBeforeSave = async ({ inQrCode }) => {
             return await LocalReturnObject;
         };
 
-        // console.log("pppppppp : ", LocalFromDalQrCodesAndCompleted.JsonData[inQrCode]);
-
         if ((LocalFromDalQrCodesAndCompleted.JsonData[inQrCode].QrCodesInProcess === 0) === false) {
             LocalReturnObject.KReason = `${inQrCode}: completed : ${LocalFromDalQrCodesAndCompleted.JsonData[inQrCode].QrCodesCompleted}: error!`;
             return await LocalReturnObject;
@@ -97,4 +141,4 @@ let LocalGetDate = () => {
     return `${dd}-${MM}-${yyyy}-${HH}-${mm}-${ss}`;
 };
 
-export { InsertFunc }
+export { InsertFunc, CheckBeforeSave }

@@ -96,6 +96,4 @@ let LocalPullQrCodeFromScan = ({ InScanData }) => {
     return LocalReturnValue;
 };
 
-export { BillingScanFuncs };
-
-BillingScanHeaderId().then();
+export { BillingScanFuncs, BillingScanHeaderId };
