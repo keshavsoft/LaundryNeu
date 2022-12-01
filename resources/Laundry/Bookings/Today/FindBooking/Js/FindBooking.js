@@ -17,7 +17,6 @@ let FindBookingFunc = async (inEvent) => {
     if (jVarLocalDataToShow.KTF) {
         jVarLocalKCont1.innerHTML = template(jVarLocalDataToShow.KResult);
     };
-
 };
 
 let ToDOMBodyFromPK = async ({ inBookingPK }) => {
@@ -48,7 +47,6 @@ let ToDOMBodyAsParts = async ({ inBookingPK, inQrCode }) => {
 
     await ShowInDOMStartFunc({
         inData: jVarLocalDataToShow.ForQrCode
-
     });
 
     // var template = Handlebars.compile(jVarLocalFromHbs);
@@ -61,5 +59,3 @@ let ToDOMBodyAsParts = async ({ inBookingPK, inQrCode }) => {
 };
 
 export { ToDOMBodyFromPK, ToDOMBodyAsParts };
-
-FindBookingFunc().then();

@@ -3,6 +3,8 @@ import { StartFunc as FuncsForPkStartFunc } from "../FuncsForPk/Start.js";
 import { StartFunc as QrCodesStartFunc } from "../../QrCodes/PullFuncs/WithBookingData.js";
 import { StartFunc as CompletedStartFunc } from "../../Completed/PullFuncs/Original.js";
 import { StartFunc as OriginalStartFunc } from "./Original.js";
+//import _ from "../../js/lodash";
+//import _ from "../../../../js/lodash.js";
 
 // let CommonJsonFileName = "Bookings.json";
 // let CommonDataPath = `./KData/JSON/2017/Data/Transactions/${CommonJsonFileName}`;
@@ -87,14 +89,14 @@ let LastPkData = async () => {
     let LocalFromFromPk;
 
     let LocalFromFuncsForPkStartFunc = await FuncsForPkStartFunc();
-console.log("LocalFromFuncsForPkStartFunc : ",LocalFromFuncsForPkStartFunc);
+    console.log("LocalFromFuncsForPkStartFunc : ", LocalFromFuncsForPkStartFunc);
     if (LocalFromFuncsForPkStartFunc.KTF === false) {
         LocalReturnObject.KReason = LocalFromFuncsForPkStartFunc.KReason;
         return await LocalReturnObject;
     };
 
     LocalFromFromPk = await FromPk({ inRowPK: LocalFromFuncsForPkStartFunc.LastPk });
-    console.log("LocalFromFromPk : ",LocalFromFromPk);
+    console.log("LocalFromFromPk : ", LocalFromFromPk);
     if (LocalFromFromPk.KTF === false) {
         LocalReturnObject.KReason = LocalFromFromPk.KReason;
         return await LocalReturnObject;

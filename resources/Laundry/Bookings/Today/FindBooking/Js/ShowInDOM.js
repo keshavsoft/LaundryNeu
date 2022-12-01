@@ -1,6 +1,8 @@
 import { FindBookingHtmlFunc } from "./HtmlFuns/FromTemplate.js";
+import { ReturnBookingPKFromURLSearchParams } from "./urlSearchParams.js";
+import { ToDOMBodyAsParts } from "./FindBooking.js";
 
-let StartFunc = async ({inData}) => {
+let StartFunc = async ({ inData }) => {
     let jVarLocalFromHbs = await FindBookingHtmlFunc();
 
     let jVarLocalKCont1 = document.getElementById("KCont1");
@@ -13,8 +15,16 @@ let StartFunc = async ({inData}) => {
         inGarmentsTotalPcs: inData.GarmentsTotalPcs,
         inWeight: inData.Weight,
         inAmount: inData.Amount,
-
     });
+
+    LocalShowGarments({ inGarmentDetails: inData.GarmentDetails });
+};
+
+let LocalShowGarments = ({ inGarmentDetails }) => {
+    let jVarLocalGarments1 = document.getElementById("Garments1");
+    
+    jVarLocalGarments1.value = inGarmentDetails["1"].Name;
+    //jVarLocalGarments1.focus();
 };
 
 let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarmentsTotalPcs, inWeight, inAmount }) => {
@@ -38,4 +48,11 @@ let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarment
 
 };
 
-export { StartFunc };
+let FromUrlParams = async () => {
+    let LocalFromReturnBookingPKFromURLSearchParams = await ReturnBookingPKFromURLSearchParams();
+    console.log("LocalFromReturnBookingPKFromURLSearchParams : ", LocalFromReturnBookingPKFromURLSearchParams);
+
+    await ToDOMBodyAsParts({ inBookingPK: LocalFromReturnBookingPKFromURLSearchParams.BookingPK });
+};
+
+export { StartFunc, FromUrlParams };

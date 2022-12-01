@@ -17,8 +17,10 @@ let AddlistenersFunc = () => {
 
 let LocalTableButtonFunc = async (event) => {
     let jVarLocalCurrentTarget = event.currentTarget;
+    
+    document.location = `../FindBooking/FindBooking.html?BookingPK=${jVarLocalCurrentTarget.dataset.orderno}`;
 
-    await ToDOMBodyAsParts({ inBookingPK: jVarLocalCurrentTarget.dataset.orderno });
+    //await ToDOMBodyAsParts({ inBookingPK: jVarLocalCurrentTarget.dataset.orderno });
 };
 
 let LocalTableBillButtonFunc = async (event) => {
