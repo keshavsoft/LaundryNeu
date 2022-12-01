@@ -30,4 +30,6 @@ let CompletedShow = async (inEvent) => {
     jVarLocalSearchQrCodeTable.focus();
 };
 
-CompletedShow().then();
+export {
+    CompletedShow
+};

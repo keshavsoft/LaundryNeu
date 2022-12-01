@@ -62,8 +62,6 @@ let LocalToJson = async ({ inDataToSave, inPK }) => {
     let LocalReturnObject = { KTF: false, KResult: "" };
 
     try {
-        //let LocalJsonFileName = "Bookings.json";
-
         let LocalCustomersData = await Neutralino.filesystem.readFile(CommonJsonPath);
         let LocalCustomersDataAsJson = JSON.parse(LocalCustomersData);
 
