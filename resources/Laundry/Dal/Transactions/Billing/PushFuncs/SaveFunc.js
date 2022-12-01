@@ -1,6 +1,7 @@
 import { StartFunc as QrCodesCheckQrCode } from "../../QrCodes/PullFuncs/CheckQrCode.js";
 import { StartFunc as DalQrCodesAndCompleted } from "../../Bookings/PullFuncs/QrCodesAndCompleted.js";
 import { StartFunc as PushFuncsStartFunc } from "../../../../Dal/Transactions/Billing/PushFuncs/Original.js";
+import { StartFunc as CheckFuncsStartFunc } from "../PullFuncs/CheckFuncs/ForPKFuns.js";
 
 let CommonFileName = "Billing.json";
 
@@ -8,7 +9,7 @@ let InsertFunc = async ({ inQrCode }) => {
     let LocalReturnObject = { KTF: false, KResult: "" };
 
     try {
-        let LocalFromCheck = await CheckBeforeSave({ inQrCode });
+        let LocalFromCheck = await CheckFuncsStartFunc({  inQrCode });
 
         console.log("LocalFromCheck : ", LocalFromCheck);
 
@@ -141,4 +142,4 @@ let LocalGetDate = () => {
     return `${dd}-${MM}-${yyyy}-${HH}-${mm}-${ss}`;
 };
 
-export { InsertFunc, CheckBeforeSave }
+export { InsertFunc }

@@ -30,4 +30,4 @@ let BillingShow = async (inEvent) => {
     jVarLocalSearchQrCodeTable.focus();
 };
 
-BillingShow().then();
+export { BillingShow };
