@@ -19,13 +19,14 @@ let StartFunc = async ({ inData }) => {
     });
 
     LocalShowGarments({ inGarmentDetails: inData.GarmentDetails });
-    LocalGarments1({ inGarmentDetails: inData.GarmentDetails });
-    LocalGarments2({ inGarmentDetails: inData.GarmentDetails });
 
 
 };
 
 let LocalShowGarments = ({ inGarmentDetails }) => {
+
+    LocalGarments1({ inGarmentDetails });
+    LocalGarments2({ inGarmentDetails });
 
     // let jVarLocalGarments1 = document.getElementById("Garments1");
 
@@ -80,22 +81,26 @@ let LocalShowGarments = ({ inGarmentDetails }) => {
     //jVarLocalGarments1.focus();
 };
 
-let LocalGarments1 = ({GarmentDetails}) => {
-    if ("1" in GarmentDetails) {
+let LocalGarments1 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+
+    if ("1" in jVarLocalGarmentDetails) {
         let jVarLocalGarments1 = document.getElementById("Garments1");
         let jVarLocalPcs1 = document.getElementById("Pcs1");
 
-        jVarLocalGarments1.value = inGarmentDetails["1"].Name;
-        jVarLocalPcs1.value = inGarmentDetails["1"].Pcs;
+        jVarLocalGarments1.value = jVarLocalGarmentDetails["1"].Name;
+        jVarLocalPcs1.value = jVarLocalGarmentDetails["1"].Pcs;
     }
 };
-let LocalGarments2 = ({GarmentDetails}) => {
-    if ("2" in GarmentDetails ) {
+let LocalGarments2 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("2" in jVarLocalGarmentDetails) {
         let jVarLocalGarments2 = document.getElementById("Garments2");
         let jVarLocalPcs2 = document.getElementById("Pcs2");
 
-        jVarLocalGarments2.value = inGarmentDetails["2"].Name;
-        jVarLocalPcs2.value = inGarmentDetails["2"].Pcs;
+        jVarLocalGarments2.value = jVarLocalGarmentDetails["2"].Name;
+        jVarLocalPcs2.value = jVarLocalGarmentDetails["2"].Pcs;
     }
 };
 

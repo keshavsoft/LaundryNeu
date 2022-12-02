@@ -1,7 +1,7 @@
 {
   "applicationId": "js.neutralino.sample",
   "version": "1.0.0",
-  "defaultMode": "window",
+  "defaultMode": "browser",
   "port": 0,
   "documentRoot": "/resources/",
   "url": "/Laundry/Bookings/Today/CustomerSearch/CustomerSearch.html",
