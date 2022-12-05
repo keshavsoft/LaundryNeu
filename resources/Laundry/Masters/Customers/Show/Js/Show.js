@@ -1,7 +1,8 @@
 import { CustomersShowHtmlFunc } from "./HtmlFuns/FromHbs.js";
 // import { ChangeClassFunc } from "../../../../CommonFuncs/Header.js";
 import { ShowDalFunc as CustomerShowDalFunc } from "./DalFuncs.js";
-
+import { AddlistenersFunc } from "./ListenerFuncs.js";
+import { StartFunc as CustomersDataListFillStartFunc } from "./CustomersDataListFill.js";
 
 let CustomersShowFunc = async (inEvent) => {
     let jVarLocalShowOfflineSpinnerId = document.getElementById("ShowOfflineSpinnerId");
@@ -37,3 +38,5 @@ let LocalSetFocusFunc = () => {
 };
 
 CustomersShowFunc().then();
+AddlistenersFunc();
+CustomersDataListFillStartFunc().then();
