@@ -27,6 +27,16 @@ let LocalShowGarments = ({ inGarmentDetails }) => {
 
     LocalGarments1({ inGarmentDetails });
     LocalGarments2({ inGarmentDetails });
+    LocalGarments3({ inGarmentDetails });
+    LocalGarments4({ inGarmentDetails });
+    LocalGarments5({ inGarmentDetails });
+    LocalGarments6({ inGarmentDetails });
+    LocalGarments7({ inGarmentDetails });
+    LocalGarments8({ inGarmentDetails });
+    LocalGarments9({ inGarmentDetails });
+    LocalGarments10({ inGarmentDetails });
+
+
 
     // let jVarLocalGarments1 = document.getElementById("Garments1");
 
@@ -101,6 +111,102 @@ let LocalGarments2 = ({ inGarmentDetails }) => {
 
         jVarLocalGarments2.value = jVarLocalGarmentDetails["2"].Name;
         jVarLocalPcs2.value = jVarLocalGarmentDetails["2"].Pcs;
+    }
+};
+
+let LocalGarments3 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("3" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments3 = document.getElementById("Garments3");
+        let jVarLocalPcs3 = document.getElementById("Pcs3");
+
+        jVarLocalGarments3.value = jVarLocalGarmentDetails["3"].Name;
+        jVarLocalPcs3.value = jVarLocalGarmentDetails["3"].Pcs;
+    }
+};
+
+let LocalGarments4 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("4" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments4 = document.getElementById("Garments4");
+        let jVarLocalPcs4 = document.getElementById("Pcs4");
+
+        jVarLocalGarments4.value = jVarLocalGarmentDetails["4"].Name;
+        jVarLocalPcs4.value = jVarLocalGarmentDetails["4"].Pcs;
+    }
+};
+
+let LocalGarments5 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("5" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments5 = document.getElementById("Garments5");
+        let jVarLocalPcs5 = document.getElementById("Pcs5");
+
+        jVarLocalGarments5.value = jVarLocalGarmentDetails["5"].Name;
+        jVarLocalPcs5.value = jVarLocalGarmentDetails["5"].Pcs;
+    }
+};
+
+let LocalGarments6 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("6" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments6 = document.getElementById("Garments6");
+        let jVarLocalPcs6 = document.getElementById("Pcs6");
+
+        jVarLocalGarments6.value = jVarLocalGarmentDetails["6"].Name;
+        jVarLocalPcs6.value = jVarLocalGarmentDetails["6"].Pcs;
+    }
+};
+
+let LocalGarments7 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("7" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments7 = document.getElementById("Garments7");
+        let jVarLocalPcs7 = document.getElementById("Pcs7");
+
+        jVarLocalGarments7.value = jVarLocalGarmentDetails["7"].Name;
+        jVarLocalPcs7.value = jVarLocalGarmentDetails["7"].Pcs;
+    }
+};
+
+let LocalGarments8 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("8" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments8 = document.getElementById("Garments8");
+        let jVarLocalPcs8 = document.getElementById("Pcs8");
+
+        jVarLocalGarments8.value = jVarLocalGarmentDetails["8"].Name;
+        jVarLocalPcs8.value = jVarLocalGarmentDetails["8"].Pcs;
+    }
+};
+
+let LocalGarments9 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("9" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments9 = document.getElementById("Garments9");
+        let jVarLocalPcs9 = document.getElementById("Pcs9");
+
+        jVarLocalGarments9.value = jVarLocalGarmentDetails["9"].Name;
+        jVarLocalPcs9.value = jVarLocalGarmentDetails["9"].Pcs;
+    }
+};
+
+let LocalGarments10 = ({ inGarmentDetails }) => {
+    let jVarLocalGarmentDetails = inGarmentDetails;
+    
+    if ("10" in jVarLocalGarmentDetails) {
+        let jVarLocalGarments10 = document.getElementById("Garments10");
+        let jVarLocalPcs10 = document.getElementById("Pcs10");
+
+        jVarLocalGarments10.value = jVarLocalGarmentDetails["10"].Name;
+        jVarLocalPcs10.value = jVarLocalGarmentDetails["10"].Pcs;
     }
 };
 
