@@ -30,14 +30,14 @@
                 </thead>
                 <tbody id="KTableBody">
                     {{#each this}}
-                    <tr data-qrcode="{{@key}}">
+                    <tr data-qrcode="{{qrcode}}">
                         <td>{{SNo}}</td>
                         <td>{{CustomerName}}</td>
                         <td>{{Mobile}}</td>
                         <td style="text-align:right">{{GarmentPcsTotal}}</td>
                         <td style="text-align:right">{{Weight}}</td>
                         <td style="text-align:right">{{ShowInIndianDateFormat Amount}}</td>
-                        <td style="text-align:right"><button type="button" data-qrcode="{{key}}"
+                        <td style="text-align:right"><button type="button" data-qrcode="{{qrcode}}"
                                 class="btn btn-primary QrCodeButtonClass">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-qr-code" viewBox="0 0 16 16">

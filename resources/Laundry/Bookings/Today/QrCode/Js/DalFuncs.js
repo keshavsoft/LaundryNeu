@@ -28,11 +28,30 @@ let ShowAllFuncSortDesc = async () => {
     let LocalKeysAsNumbers = toNumbers(LocalKeys);
     let dscN = LocalKeysAsNumbers.sort((f, s) => s - f);
 
-    dscN.forEach(element => {
-        LocalReturnObject.JsonData[element] = LocalDataFromJson.JsonData[element];
-        LocalReturnObject.JsonData[element].SNo = LocalSNo;
-        LocalSNo += 1;
+    LocalReturnObject.JsonData = dscN.map((element, LoopIndex) => {
+        return {
+            SNo: LoopIndex + 1,
+            qrcode: element,
+            ...LocalDataFromJson.JsonData[element]
+        }
+        return LocalDataFromJson.JsonData[element];
     });
+
+
+    // dscN.forEach(element => {
+    //     // let LocalNewObject = {};
+    //     // LocalNewObject[element.toString()] = LocalDataFromJson.JsonData[element];
+
+    //     // Object.assign(LocalReturnObject.JsonData, LocalNewObject);
+
+
+    //     LocalReturnObject.JsonData[element.toString()] = LocalDataFromJson.JsonData[element];
+
+    //     console.log('llllllll : ', element, LocalReturnObject.JsonData, LocalDataFromJson.JsonData[element]);
+
+    //     //LocalReturnObject.JsonData[element].SNo = LocalSNo;
+    //     LocalSNo += 1;
+    // });
 
     // Object.entries(LocalDataFromJson.JsonData).forEach(
     //     ([key, value]) => {
