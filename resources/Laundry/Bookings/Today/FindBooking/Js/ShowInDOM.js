@@ -16,6 +16,7 @@ let StartFunc = async ({ inData }) => {
         inGarmentsTotalPcs: inData.GarmentsTotalPcs,
         inWeight: inData.Weight,
         inAmount: inData.Amount,
+        inKgRate: inData.KgRate
     });
 
     LocalShowGarments({ inGarmentDetails: inData.GarmentDetails });
@@ -104,7 +105,7 @@ let LocalGarments1 = ({ inGarmentDetails }) => {
 };
 let LocalGarments2 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("2" in jVarLocalGarmentDetails) {
         let jVarLocalGarments2 = document.getElementById("Garments2");
         let jVarLocalPcs2 = document.getElementById("Pcs2");
@@ -116,7 +117,7 @@ let LocalGarments2 = ({ inGarmentDetails }) => {
 
 let LocalGarments3 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("3" in jVarLocalGarmentDetails) {
         let jVarLocalGarments3 = document.getElementById("Garments3");
         let jVarLocalPcs3 = document.getElementById("Pcs3");
@@ -128,7 +129,7 @@ let LocalGarments3 = ({ inGarmentDetails }) => {
 
 let LocalGarments4 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("4" in jVarLocalGarmentDetails) {
         let jVarLocalGarments4 = document.getElementById("Garments4");
         let jVarLocalPcs4 = document.getElementById("Pcs4");
@@ -140,7 +141,7 @@ let LocalGarments4 = ({ inGarmentDetails }) => {
 
 let LocalGarments5 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("5" in jVarLocalGarmentDetails) {
         let jVarLocalGarments5 = document.getElementById("Garments5");
         let jVarLocalPcs5 = document.getElementById("Pcs5");
@@ -152,7 +153,7 @@ let LocalGarments5 = ({ inGarmentDetails }) => {
 
 let LocalGarments6 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("6" in jVarLocalGarmentDetails) {
         let jVarLocalGarments6 = document.getElementById("Garments6");
         let jVarLocalPcs6 = document.getElementById("Pcs6");
@@ -164,7 +165,7 @@ let LocalGarments6 = ({ inGarmentDetails }) => {
 
 let LocalGarments7 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("7" in jVarLocalGarmentDetails) {
         let jVarLocalGarments7 = document.getElementById("Garments7");
         let jVarLocalPcs7 = document.getElementById("Pcs7");
@@ -176,7 +177,7 @@ let LocalGarments7 = ({ inGarmentDetails }) => {
 
 let LocalGarments8 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("8" in jVarLocalGarmentDetails) {
         let jVarLocalGarments8 = document.getElementById("Garments8");
         let jVarLocalPcs8 = document.getElementById("Pcs8");
@@ -188,7 +189,7 @@ let LocalGarments8 = ({ inGarmentDetails }) => {
 
 let LocalGarments9 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("9" in jVarLocalGarmentDetails) {
         let jVarLocalGarments9 = document.getElementById("Garments9");
         let jVarLocalPcs9 = document.getElementById("Pcs9");
@@ -200,7 +201,7 @@ let LocalGarments9 = ({ inGarmentDetails }) => {
 
 let LocalGarments10 = ({ inGarmentDetails }) => {
     let jVarLocalGarmentDetails = inGarmentDetails;
-    
+
     if ("10" in jVarLocalGarmentDetails) {
         let jVarLocalGarments10 = document.getElementById("Garments10");
         let jVarLocalPcs10 = document.getElementById("Pcs10");
@@ -210,7 +211,7 @@ let LocalGarments10 = ({ inGarmentDetails }) => {
     }
 };
 
-let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarmentsTotalPcs, inWeight, inAmount }) => {
+let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarmentsTotalPcs, inWeight, inAmount, inKgRate }) => {
     let jVarLocalOrderNo = document.getElementById("OrderNo");
     jVarLocalOrderNo.value = inOrderNo;
 
@@ -233,7 +234,6 @@ let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarment
 
 let FromUrlParams = async () => {
     let LocalFromReturnBookingPKFromURLSearchParams = await ReturnBookingPKFromURLSearchParams();
-    console.log("LocalFromReturnBookingPKFromURLSearchParams : ", LocalFromReturnBookingPKFromURLSearchParams);
 
     await ToDOMBodyAsParts({ inBookingPK: LocalFromReturnBookingPKFromURLSearchParams.BookingPK });
 };

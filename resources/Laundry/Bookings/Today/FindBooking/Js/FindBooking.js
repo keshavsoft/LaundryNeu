@@ -43,7 +43,6 @@ let ToDOMBodyFromPK = async ({ inBookingPK }) => {
 
 let ToDOMBodyAsParts = async ({ inBookingPK, inQrCode }) => {
     let jVarLocalDataToShow = await DalFromPkWithCompleted({ inRowPK: inBookingPK });
-    console.log("ToDOMBodyAsParts : ", jVarLocalDataToShow);
 
     await ShowInDOMStartFunc({
         inData: jVarLocalDataToShow.ForQrCode

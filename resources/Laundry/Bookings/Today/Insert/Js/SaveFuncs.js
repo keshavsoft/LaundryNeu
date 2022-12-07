@@ -96,7 +96,7 @@ let BookingSaveFunc = async () => {
     // if (LocalGarmentsTotal.KTF) {
     //     jVarLocalObject.QrCodes[11] = LocalGarmentsTotal.KResult
     // };
-
+    console.log("jVarLocalObject : ", jVarLocalObject);
     let jVarLocalFromInsert = await PushFuncsStartFunc({ inDataToSave: jVarLocalObject });
     await LocalPostSaveFunc({ inFromSave: jVarLocalFromInsert });
 };
@@ -147,6 +147,7 @@ let jFBookingDetails = () => {
     let JVarLocalMobileNumber = document.getElementById("Mobile");
     let jVarLocalGarmentsTotalPcs = document.getElementById("GarmentsTotalPcs");
     let jVarLocalWeight = document.getElementById("Weight");
+    let jVarLocalKgRate = document.getElementById("KgRate");
     let jvarLocalAmount = document.getElementById("Amount");
     // console.log("jVarLocalTotalGarmnetsPcs:", jVarLocalTotalGarmnetsPcs);
     jVarLocalReturnObject.KTF = true;
@@ -156,7 +157,8 @@ let jFBookingDetails = () => {
         Mobile: JVarLocalMobileNumber.value,
         GarmentsTotalPcs: parseInt(jVarLocalGarmentsTotalPcs.value),
         Weight: jVarLocalWeight.value,
-        Amount: jvarLocalAmount.value
+        Amount: jvarLocalAmount.value,
+        KgRate: jVarLocalKgRate.value
     };
 
     return jVarLocalReturnObject;
