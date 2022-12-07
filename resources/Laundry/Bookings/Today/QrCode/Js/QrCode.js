@@ -1,7 +1,7 @@
 import { QrCodeHtmlFunc } from "../Js/HtmlFuncs/FromHbs.js";
 // import { ChangeClassFunc } from "../../../../CommonFuncs/Header";
 import { AddListeners } from "./QrCodeToModal.js";
-import { ShowAllFunc as DalStartFunc } from "./DalFuncs.js";
+import { ShowAllFuncSortDesc as DalStartFunc } from "./DalFuncs.js";
 
 let QrcodeShowAll = async (inEvent) => {
     if ((inEvent === undefined) === false) {
