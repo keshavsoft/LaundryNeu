@@ -224,19 +224,35 @@ let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarment
     let jVarLocalGarmentsTotalPcs = document.getElementById("GarmentsTotalPcs");
     jVarLocalGarmentsTotalPcs.value = inGarmentsTotalPcs;
 
-    let jVarLocalWeight = document.getElementById("Weight");
-    jVarLocalWeight.value = inWeight;
+    // let jVarLocalWeight = document.getElementById("Weight");
+    // jVarLocalWeight.value = inWeight;
 
-    let jVarLocalAmount = document.getElementById("Amount");
-    jVarLocalAmount.value = inAmount;
+    // let jVarLocalAmount = document.getElementById("Amount");
+    // jVarLocalAmount.value = inAmount;
 
     LocalShowKgRateToDom({ inKgRate });
+    LocalShowlAmountToDom({ inAmount });
+    LocalShowlWeightToDom({ inWeight });
+
 };
 
 let LocalShowKgRateToDom = ({ inKgRate }) => {
     let jVarLocalKgRateId = document.getElementById("KgRateId");
     if (jVarLocalKgRateId !== null) jVarLocalKgRateId.value = inKgRate;
 };
+
+let LocalShowlAmountToDom = ({ inAmount }) => {
+    let jVarLocalAmountId = document.getElementById("AmountId");
+    if (jVarLocalAmountId !== null) jVarLocalAmountId.value = inAmount;
+};
+
+let LocalShowlWeightToDom = ({ inWeight }) => { 
+    let jVarLocalWeightId = document.getElementById("WeightId");
+    if (jVarLocalWeightId !== null) jVarLocalWeightId.value = inWeight;
+};
+
+
+
 
 let FromUrlParams = async () => {
     let LocalFromReturnBookingPKFromURLSearchParams = await ReturnBookingPKFromURLSearchParams();
