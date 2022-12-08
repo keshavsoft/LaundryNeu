@@ -3,11 +3,10 @@ import { ReturnBookingPKFromURLSearchParams } from "./urlSearchParams.js";
 import { ToDOMBodyAsParts } from "./FindBooking.js";
 
 let StartFunc = async ({ inData }) => {
-    console.log("inData", inData);
-    let jVarLocalFromHbs = await FindBookingHtmlFunc();
 
-    let jVarLocalKCont1 = document.getElementById("KCont1");
-    jVarLocalKCont1.innerHTML = jVarLocalFromHbs;
+    // let jVarLocalFromHbs = await FindBookingHtmlFunc();
+    // let jVarLocalKCont1 = document.getElementById("KCont1");
+    // jVarLocalKCont1.innerHTML = jVarLocalFromHbs;
 
     LocalFuncCustomerDetails({
         inOrderNo: inData.OrderNo,
@@ -212,11 +211,12 @@ let LocalGarments10 = ({ inGarmentDetails }) => {
 };
 
 let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarmentsTotalPcs, inWeight, inAmount, inKgRate }) => {
+    console.log("inKgRate : ", inKgRate);
     let jVarLocalOrderNo = document.getElementById("OrderNo");
     jVarLocalOrderNo.value = inOrderNo;
 
     let jVarLocalCustomerName = document.getElementById("CustomerName");
-    if (jVarLocalOrderNo !== null) jVarLocalCustomerName.value = inCustomerName;
+    if (jVarLocalCustomerName !== null) jVarLocalCustomerName.value = inCustomerName;
 
     let jVarLocalMobile = document.getElementById("Mobile");
     jVarLocalMobile.value = inMobile;
@@ -230,6 +230,12 @@ let LocalFuncCustomerDetails = ({ inOrderNo, inCustomerName, inMobile, inGarment
     let jVarLocalAmount = document.getElementById("Amount");
     jVarLocalAmount.value = inAmount;
 
+    LocalShowKgRateToDom({ inKgRate });
+};
+
+let LocalShowKgRateToDom = ({ inKgRate }) => {
+    let jVarLocalKgRateId = document.getElementById("KgRateId");
+    if (jVarLocalKgRateId !== null) jVarLocalKgRateId.value = inKgRate;
 };
 
 let FromUrlParams = async () => {
