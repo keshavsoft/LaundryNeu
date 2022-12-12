@@ -133,6 +133,7 @@ let LocalPostSaveFunc = async ({ inFromSave }) => {
     } else {
 
     };
+    window.location.href= "../QrCode/QrCode.html"
 };
 
 let LocalPreSaveFunc = () => {

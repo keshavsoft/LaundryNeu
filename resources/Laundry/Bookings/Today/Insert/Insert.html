@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example" id="NavBarId">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark " aria-label="Sixth navbar example" id="NavBarId">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Today</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
@@ -201,7 +201,7 @@
                                 <div class="mb-3 position-relative">
                                     <label class="col-form-label fs-2">GarmentsTotalPcs</label>
                                     <div class="col">
-                                        <input type="number" class="form-control fs-2" id="GarmentsTotalPcs" aria-describedby="emailHelp" required="">
+                                        <input type="number" class="form-control fs-2" min="0" id="GarmentsTotalPcs" aria-describedby="emailHelp" required="">
                                         <div class="invalid-tooltip">
                                             Please Enter Total Garments.
                                         </div>
@@ -211,7 +211,7 @@
                                     <div class="col">
                                         <label class="col-md-6 col-form-label fs-2">Weight</label>
                                         <div class="col">
-                                            <input type="number" class="form-control fs-2" name="Weight" id="Weight" aria-describedby="emailHelp" required="">
+                                            <input type="number" class="form-control fs-2" step="any" min="0" max="10000000" name="Weight" id="Weight" aria-describedby="emailHelp" required="">
                                             <div class="invalid-feedback">
                                                 Should not be empty!
                                             </div>
@@ -223,7 +223,7 @@
                                     <div class="col">
                                         <label class="col-md-6 col-form-label fs-2">Kg Rate</label>
                                         <div class="col">
-                                            <input type="number" class="form-control fs-2" name="KgRate" id="KgRate" aria-describedby="emailHelp" required="">
+                                            <input type="number" class="form-control fs-2" min="0" name="KgRate" id="KgRate" aria-describedby="emailHelp" required="">
                                             <div class="invalid-feedback">
                                                 Should not be empty!
                                             </div>
