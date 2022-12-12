@@ -7,7 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/Laundry/css/bootstrap.min.css">
+    <!-- 
+	<script type="text/javascript" src="/js/bwip-js-min.js"></script>
+ -->
+    <!-- <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/print.min.css"> -->
+
     <link rel="stylesheet" href="/Laundry/css/header.css">
 </head>
 
@@ -155,18 +164,6 @@
                                 Dash Board
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link PrintAClass active" href="../Print/Print.html"
-                                id="BookingHeaderQrCodeId">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
-                                    <path
-                                        d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z" />
-                                </svg>
-                                Print
-                            </a>
-                        </li>
                         <li>
                             <a tabindex="-1" href="#" class="nav-link text-danger" id="QuitId">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -180,9 +177,9 @@
                             </a>
                         </li>
                     </ul>
-                    <form role="search" onsubmit="return false;">
+                    <form role="search">
                         <input id="MainHeaderSearchId" class="form-control" type="search" placeholder="Search"
-                            aria-label="Search" list="CustomerDataListId">
+                            aria-label="Search">
                     </form>
                     <script>
                         let jFChangeHeaderActiveClass = () => {
@@ -229,38 +226,6 @@
 
     <main>
         <div class="container" id="KCont1">
-            <div class="input-group mt-3 mb-3">
-                <input type="text" class="form-control" placeholder="Scan Qrcode or Search Customer" aria-label="Input"
-                    aria-describedby="GoButtonid" id="ScanId" list="CustomerDataListId" autofocus="">
-                <button class="btn btn-outline-secondary" type="button" id="GoButtonid">GO</button>
-            </div>
-
-
-            <datalist id="CustomerDataListId">
-                <option value="Keshav">
-                </option>
-                <option value="9848163021">
-                </option>
-            </datalist>
-
-            <div class="alert alert-danger d-none" role="alert" id="DangerAlertId">
-                A simple danger alert—check it out!
-            </div>
-
-
-            <div class="alert alert-success d-none" role="alert" id="SuccessAlertId">
-                Success!
-            </div>
-
-            <div class="row">
-                <div class="col-6">.</div>
-
-                <div class="col-6 d-grid gap-2 col-6 mx-auto">
-                    <a name="" id="" class="btn btn-primary" href="/Laundry/Masters/Customers/Insert/Insert.html"
-                        role="button">Create Customer</a>
-                </div>
-            </div>
-
 
         </div>
     </main>
@@ -280,8 +245,6 @@
     </footer>
 
     <script src="/Laundry/js/bootstrap.min.js"></script>
-
-    <script src="/Laundry/js/lodash.js"></script>
 
     <script src="/js/neutralino.js"></script>
 
@@ -363,7 +326,7 @@
         Neutralino.init();
     </script>
 
-    <script src="./CustomerSearch.js" type="module"></script>
+    <script src="/Laundry/Bookings/Today/ShowAll/Js/ShowinDOMBody.js" type="module"></script>
 
 </body>
 
