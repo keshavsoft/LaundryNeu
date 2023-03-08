@@ -1,12 +1,11 @@
-import { QrCodeModalPopUp } from "../Js/HtmlFuncs/FromHbs.js";
+import { QrCodeModalPopUp } from "../HtmlFuncs/FromHbs.js";
 import { FromBookingPk } from "../../../../Dal/Transactions/QrCodes/PullFuncs/PickFuncs.js";
-import {  AddListeners as AddListenersFromQrCodeOnly} from "./ListenerFuncs/QrCodeOnly.js";
 
 let ToModal = async ({ inRowPK }) => {
     let jVarLocalDataNeeded = await FromBookingPk({ inBookingPK: inRowPK });
     try {
         if (jVarLocalDataNeeded.KTF) {
-            let jVarLocalModalBody = document.getElementById("ModalBody");
+            let jVarLocalModalBody = document.getElementById("ModalBodyorQrCodeOnly");
 
             let jVarLocalFromTemplate = await QrCodeModalPopUp();
 
@@ -46,8 +45,8 @@ let ToModal = async ({ inRowPK }) => {
 };
 
 let AddListeners = () => {
-    let jVarLocalQrCodeButtonClass = document.getElementsByClassName("QrCodeButtonClass");
-   
+    let jVarLocalQrCodeButtonClass = document.getElementsByClassName("QrCodeOnlyButtonClass");
+   console.log("jVarLocalQrCodeButtonClass : ",jVarLocalQrCodeButtonClass);
     for (var i = 0; i < jVarLocalQrCodeButtonClass.length; i++) {
         jVarLocalQrCodeButtonClass[i].addEventListener('click', async (inEvent) => {
             let jVarInsideCurrentTarget = inEvent.currentTarget;
@@ -57,7 +56,8 @@ let AddListeners = () => {
         });
     };
 
-   // AddListenersFromQrCodeOnly();
+    
+    
 };
 
 let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
@@ -92,4 +92,4 @@ let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
     }
 };
 
-export { AddListeners, ToModal };
+export { AddListeners };
