@@ -1,20 +1,25 @@
-import { QrCodeModalPopUp } from "../HtmlFuncs/FromHbs.js";
-import { FromBookingPk } from "../../../../Dal/Transactions/QrCodes/PullFuncs/PickFuncs.js";
+import { QrCodeOnlyModalPopUpReturnHtml } from "../HtmlFuncs/FromHbs.js";
+import { FromBookingPk } from "../../../../../Dal/Transactions/QrCodes/PullFuncs/PickFuncs.js";
 
 let ToModal = async ({ inRowPK }) => {
     let jVarLocalDataNeeded = await FromBookingPk({ inBookingPK: inRowPK });
     try {
         if (jVarLocalDataNeeded.KTF) {
             let jVarLocalModalBody = document.getElementById("ModalBodyorQrCodeOnly");
-
-            let jVarLocalFromTemplate = await QrCodeModalPopUp();
+            console.log("222222 : ", jVarLocalModalBody);
+            let jVarLocalFromTemplate = await QrCodeOnlyModalPopUpReturnHtml();
 
             var template = Handlebars.compile(jVarLocalFromTemplate);
             let LocalQrCodesData = jVarLocalDataNeeded.KResult;
 
+            for (let i = 0; i < LocalQrCodesData.length; i++) {
+                LocalQrCodesData[i].CanvasId += "QrCodeOnly";
+            };
+
             jVarLocalModalBody.innerHTML = template(LocalQrCodesData);
 
             for (let i = 0; i < LocalQrCodesData.length; i++) {
+                console.log("11111111 : ", LocalQrCodesData[i]);
                 let jVarLocalHtmlQrId = document.getElementById(LocalQrCodesData[i].CanvasId);
                 let LoopInsideQrCode = LocalQrCodesData[i].QrCode;
                 let LoopInsideCustomerName = LocalQrCodesData[i].CustomerName;
@@ -33,7 +38,7 @@ let ToModal = async ({ inRowPK }) => {
                 });
             };
 
-            let jVarLocalId = "ModalForQrCode";
+            let jVarLocalId = "ModalForQrCodeOnly";
 
             var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
 
@@ -46,7 +51,8 @@ let ToModal = async ({ inRowPK }) => {
 
 let AddListeners = () => {
     let jVarLocalQrCodeButtonClass = document.getElementsByClassName("QrCodeOnlyButtonClass");
-   console.log("jVarLocalQrCodeButtonClass : ",jVarLocalQrCodeButtonClass);
+    console.log("jVarLocalQrCodeButtonClass : ", jVarLocalQrCodeButtonClass);
+
     for (var i = 0; i < jVarLocalQrCodeButtonClass.length; i++) {
         jVarLocalQrCodeButtonClass[i].addEventListener('click', async (inEvent) => {
             let jVarInsideCurrentTarget = inEvent.currentTarget;
@@ -55,9 +61,6 @@ let AddListeners = () => {
             ToModal({ inRowPK: jVarInsideQrCodeValue });
         });
     };
-
-    
-    
 };
 
 let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {

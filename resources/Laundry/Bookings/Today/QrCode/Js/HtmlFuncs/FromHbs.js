@@ -10,6 +10,13 @@ let QrCodeModalPopUp = async () => {
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.text();
     return await data;
-}
+};
 
-export { QrCodeHtmlFunc, QrCodeModalPopUp }            
+let QrCodeOnlyModalPopUpReturnHtml = async () => {
+    let jVarLocalFetchUrl = "/Laundry/Bookings/Today/QrCode/Html/Hbs/QrCodeOnlyModalPopUp.html";
+    let response = await fetch(jVarLocalFetchUrl);
+    let data = await response.text();
+    return await data;
+};
+
+export { QrCodeHtmlFunc, QrCodeModalPopUp, QrCodeOnlyModalPopUpReturnHtml }            
